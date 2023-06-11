@@ -1,7 +1,7 @@
 import asyncio
 import os
 from main import bot, dp
-from db import connection
+from db import db
 from aiogram.types import Message, CallbackQuery
 from keyboards import admin as nav
 from aiogram.dispatcher.filters.state import State, StatesGroup
@@ -32,12 +32,12 @@ async def process_news_command(message: Message, state: FSMContext):
             await Post.waiting_text.set()
         elif message.text == 'Выгрузка БД':
             file_path = 'data.xlsx'
-            connection.export_users(file_path)
+            db.export_users(file_path)
             with open(file_path, 'rb') as file:
                 await bot.send_document(message.from_user.id, document=file, caption='Таблица users')
 
         elif message.text == 'Статистика':
-            bot_statics = connection.get_statistics()
+            bot_statics = db.get_statistics()
             await message.answer(f'Статистика пользователей в боте: {bot_statics}')
 
 
@@ -64,7 +64,7 @@ async def standart_mailing_settings(call: CallbackQuery, state: FSMContext):
                 await bot.answer_callback_query(call.id)
                 await call.message.delete()
 
-                user_ids, count_before = connection.mailing()
+                user_ids, count_before = db.mailing()
                 count_after = 0
                 for user_id in user_ids:
                     try:
@@ -97,7 +97,7 @@ async def send_mailing_photo(call: CallbackQuery, state: FSMContext):
         message_text = data['waiting_text']
         message_photo = data['waiting_photo']
         with suppress(MessageNotModified):
-            user_ids, count_before = connection.mailing()
+            user_ids, count_before = db.mailing()
             count_after = 0
             if call.data == 'photo_confirm':
                 await call.message.delete()

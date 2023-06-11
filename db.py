@@ -68,4 +68,4 @@ class Database:
             df.to_excel(file_path, index=False)
 
 
-connection = Database(host, user, password, db_name, port)
+db = Database(host, user, password, db_name, port)

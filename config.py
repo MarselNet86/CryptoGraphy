@@ -1,7 +1,6 @@
 # bot api token
-token = '5913275467:AAECSyGhjceR5ztRkt7GV4rLyKzNQy0c6-g'
+token = '6065728150:AAE5Kc7n4MKHuNK7EFM92CGz3p_-V95TsW4'
 
-# admin id
 admin_id = 1061361318
 
 # database

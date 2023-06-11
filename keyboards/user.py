@@ -22,44 +22,37 @@ def main_menu(lang):
     return markup
 
 
-lang_ru = InlineKeyboardButton('🇷🇺Русский', callback_data='lang_ru')
-lang_en = InlineKeyboardButton('🇬🇧Английский', callback_data='lang_en')
+def lang_menu(lang):
+    lang_ru = InlineKeyboardButton(_('🇷🇺Русский', lang), callback_data='lang_ru')
+    lang_en = InlineKeyboardButton(_('🇬🇧Английский', lang), callback_data='lang_en')
 
+    language = InlineKeyboardMarkup(row_width=2)
+    language.add(lang_ru, lang_en)
 
-lang_menu = InlineKeyboardMarkup(row_width=2)
-lang_menu.add(lang_ru, lang_en)
-
-
-back = InlineKeyboardButton('🔙Назад')
-
-btn_back = ReplyKeyboardMarkup(
-    resize_keyboard=True
-    )
-
-btn_back.add(back)
+    return language
 
 
 # encrypt methods
 aes = InlineKeyboardButton('aes', callback_data='set_aes')
 blowfish = InlineKeyboardButton('blowfish', callback_data='set_blowfish')
-rc4 = InlineKeyboardButton('rc4', callback_data='set_rc4')
+# rc4 = InlineKeyboardButton('rc4', callback_data='set_rc4')
 sha256 = InlineKeyboardButton('sha256', callback_data='set_sha256')
-xor = InlineKeyboardButton('xor', callback_data='set_xor')
+# xor = InlineKeyboardButton('xor', callback_data='set_xor')
 
 
 btn_method = InlineKeyboardMarkup(row_width=1)
-btn_method.add(aes, blowfish, rc4, sha256, xor)
+btn_method.add(aes, blowfish, sha256)
 
 
 # decrypt methods
 aes = InlineKeyboardButton('aes', callback_data='decrypt_aes')
 blowfish = InlineKeyboardButton('blowfish', callback_data='decrypt_blowfish')
-rc4 = InlineKeyboardButton('rc4', callback_data='decrypt_rc4')
+# rc4 = InlineKeyboardButton('rc4', callback_data='decrypt_rc4')
 sha256 = InlineKeyboardButton('sha256', callback_data='decrypt_sha256')
-xor = InlineKeyboardButton('xor', callback_data='decrypt_xor')
+# xor = InlineKeyboardButton('xor', callback_data='decrypt_xor')
 
 btn_decrypt = InlineKeyboardMarkup(row_width=1)
-btn_decrypt.add(aes, blowfish, rc4, sha256, xor)
+btn_decrypt.add(aes, blowfish, sha256)
 
 
 def cancel_action(lang):
