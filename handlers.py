@@ -39,7 +39,7 @@ async def set_language(call: CallbackQuery):
     await bot.delete_message(call.from_user.id, call.message.message_id)
     lang = call.data[5:]
     if not db.user_exists(call.from_user.id):
-        await db.add_user(call.from_user.id, lang)
+        db.add_user(call.from_user.id, lang)
         await call.message.answer(_('Успешная регистрация!', lang), reply_markup=nav.main_menu(lang))
     else:
         user_lang = db.get_lang(call.message.chat.id)
@@ -71,7 +71,7 @@ async def handle_buttons(message: Message):
         await message.answer(_('Выберите язык:', lang), reply_markup=nav.lang_menu(lang))
 
     elif message.text == _('☎Поддержка', lang):
-        await message.answer(_('Если у вас возникают вопросы по контенту EnDeFast, то вы можете задать их нашему менеджеру — @PavelAstapenko 👨‍💻'
+        await message.answer(_('Если у вас возникают вопросы по контенту EnDeFast, то вы можете задать их нашему менеджеру — @eXXPate 👨‍💻'
                                '\n\nМенеджер всегда поможет разобраться и ответит на любые интересующие вопросы по шифрованию/расшифрованию, а также поможет решить ваши проблемы 😉', lang))
 
     else:
