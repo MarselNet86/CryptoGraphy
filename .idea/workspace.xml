@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="703f811d-abf3-4163-a84e-2b18188bb522" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Cryptography.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/111.txt.enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/KR_Maket_2022_versia_2__1.docx (5).enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/api.php.enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/data_template.xlsx (18).enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/data_template.xlsx (18)_decrypted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/download.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/papa.docx.enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/script.js.enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/template for test.xlsx (9).enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/Инвесторские деньги.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/Инвесторские деньги.txt (43).enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/Инвесторские деньги.txt (44).enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/Инвесторские деньги.txt (45).enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/Инвесторские деньги.txt (45)_decrypted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/Инвесторские деньги.txt (46).enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/Инвесторские деньги.txt (46)_decrypted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/Инвесторские деньги.txt (47).enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/Инвесторские деньги.txt (48).enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/Инвесторские деньги.txt (48)_decrypted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/Инвесторские деньги.txt (49).enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/Инвесторские деньги.txt (49)_decrypted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/Инвесторские деньги.txt (50).enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/Инвесторские деньги.txt (51).enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/Инвесторские деньги.txt (51)_decrypt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/Инвесторские деньги.txt_decrypted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/КР_Макет_2022.docx.enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/Пример 1.docx.enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/aes_ctr.py" beforeDir="false" afterPath="$PROJECT_DIR$/methods/aes_ctr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/blowfish.py" beforeDir="false" afterPath="$PROJECT_DIR$/methods/blowfish.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/downloads/111.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/downloads/111.txt.enc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/downloads/111.txt_decrypted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/sha256.py" beforeDir="false" afterPath="$PROJECT_DIR$/methods/sha256.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2RLSzIqmYzkkJ2eeFzcETXsldma" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="703f811d-abf3-4163-a84e-2b18188bb522" name="Changes" comment="" />
+      <created>1687028128896</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687028128896</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,3 +1,4 @@
+import os
 from Crypto.Cipher import AES
 from Crypto.Util import Counter
 from Crypto.Random import get_random_bytes
@@ -13,7 +14,8 @@ def encrypt_file_aes_ctr(input_file):
     cipher = AES.new(key, AES.MODE_CTR, counter=counter)
     ciphertext = cipher.encrypt(data)
 
-    output_file = input_file + '.enc'
+    file_name, file_extension = os.path.splitext(input_file)
+    output_file = file_name + '_enc' + file_extension
     with open(f'downloads/{output_file}', 'wb') as file:
         file.write(nonce + ciphertext)
 
@@ -33,22 +35,9 @@ def decrypt_file_aes_ctr(input_file, key_hex):
     cipher = AES.new(key, AES.MODE_CTR, counter=counter)
     plaintext = cipher.decrypt(ciphertext)
 
-    output_file = input_file.replace('.enc', '_decrypted')
+    name, extension = os.path.splitext(input_file)
+    output_file = name.replace('_enc', '_decrypted') + extension
     with open(output_file, 'wb') as file:
         file.write(plaintext)
 
     return output_file
-
-
-"""
-input_file = "111.txt"
-key = get_random_bytes(16)  # Генерация случайного ключа длиной 16 байтов
-
-# Шифрование файла
-encrypted_file = encrypt_file_aes_ctr(input_file, key)
-print("Файл успешно зашифрован с использованием AES-CTR:", encrypted_file)
-
-# Расшифровка файла
-decrypted_file = decrypt_file_aes_ctr(encrypted_file, key)
-print("Файл успешно расшифрован с использованием AES-CTR:", decrypted_file)
-"""

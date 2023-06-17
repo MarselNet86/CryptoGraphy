@@ -9,7 +9,8 @@ def encrypt_sha256(input_file):
     key = get_random_bytes(16)
     cipher = AES.new(key, AES.MODE_CBC)
     input_file_path = f"downloads/{input_file}"
-    output_file = input_file_path + '.enc'
+    name, extension = os.path.splitext(input_file_path)
+    output_file = name + '_enc' + extension
 
     with open(input_file_path, 'rb') as file:
         data = file.read()
@@ -27,16 +28,17 @@ def encrypt_sha256(input_file):
 
 
 def decrypt_sha256(input_file, key):
-    key = bytes.fromhex(key)  # Преобразование строки шестнадцатеричных символов обратно в байтовый формат
+    key = bytes.fromhex(key)
 
-    with open(input_file, 'rb') as file:  # Открываем файл в режиме бинарного чтения
+    with open(input_file, 'rb') as file:
         iv = b64decode(file.readline())
         ct = b64decode(file.readline())
 
     cipher = AES.new(key, AES.MODE_CBC, iv=iv)
     plaintext = unpad(cipher.decrypt(ct), AES.block_size)
 
-    output_file = input_file.replace('.enc', '_decrypted')
+    name, extension = os.path.splitext(input_file)
+    output_file = name.replace('_enc', '_decrypted') + extension
     with open(output_file, 'wb') as file:
         file.write(plaintext)
 
