@@ -4,8 +4,8 @@ token = 'YOUR_DATA'
 admin_id = 'YOUR_DATA'
 
 # database
-host = 'YOUR_DATA'
-user = 'YOUR_DATA'
-password = 'root'
-db_name = 'crypto'
+host = 'localhost'
+user = 'postgres'
+password = 'YOUR_DATA'
+db_name = 'YOUR_DATA'
 port = '5432'

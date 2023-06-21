@@ -5,7 +5,7 @@ from keyboards import user as nav
 from translations import _
 import decrypter
 import encrypter
-
+import admin_panel
 
 @dp.message_handler(commands=['start'])
 async def start(message: Message):

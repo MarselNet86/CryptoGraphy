@@ -94,6 +94,8 @@ async def decrypt_master(message: types.Message, state: FSMContext):
                 send_message = await bot.send_document(message.from_user.id, document=file, caption=key_answer)
             os.remove(output_file)
 
+            db.post_dec_statics(message.from_user.id)
+
         except Exception as e:
             print(e)
             await message.answer(_(f'🚫Ошибка при расшифровке файла!\n\n❗Ваш файл поврежден или имеет не верный ключ расшифровки!', lang))

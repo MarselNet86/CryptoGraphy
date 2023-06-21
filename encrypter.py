@@ -76,17 +76,19 @@ async def encrypt_master(message: types.Message, state: FSMContext):
 
     if lang == 'ru':
         key_answer = (f'📮Метод шифрования: {method_name}\n\n'
-                    f'🔑Ваш ключ расшифрования файла: {key}\n\n'
+                    f'🔑Ваш ключ расшифрования файла: <code>{key}</code>\n\n'
                     '⚠Сообщение с файлом будет удалено через 1 минуту!')
     else:
-        key_answer = (f'📮Encryption method: {method_name}\n\n'
-                    f'🔑Your decryption key for the file: {key}\n\n'
-                    '⚠Message with file will be deleted in 1 minute!')
+        key_answer = (f'📮Encryption method: {method_name}\n\n',
+                    f'🔑Your decryption key for the file: <code>{key}</code>\n\n'
+                    f'⚠Message with file will be deleted in 1 minute!')
 
     output_file = os.path.splitext(file_path)[0] + '_enc' + os.path.splitext(file_path)[1]
     with open(output_file, 'rb') as file:
-        send_message = await bot.send_document(message.from_user.id, document=file, caption=key_answer)
+        send_message = await bot.send_document(message.from_user.id, document=file, caption=key_answer, parse_mode='HTML')
     os.remove(output_file)
+
+    db.post_enc_statics(message.from_user.id)
 
     await state.finish()
     await asyncio.sleep(60)

@@ -38,7 +38,9 @@ async def process_news_command(message: Message, state: FSMContext):
 
         elif message.text == 'Статистика':
             bot_statics = db.get_statistics()
-            await message.answer(f'Статистика пользователей в боте: {bot_statics}')
+            await message.answer(f'Статистика пользователей в боте: {bot_statics[0]}'
+                                 f'\n\nКол-во зашифрованных файлов: {bot_statics[1]}'
+                                 f'\nКол-во расшифрованных файлов: {bot_statics[2]}')
 
 
 @dp.message_handler(state=Post.waiting_text)

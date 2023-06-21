@@ -15,6 +15,20 @@ class Database:
         )
         self.connection.autocommit = True
 
+    def create_table(self):
+        """Создать таблицу users, если она отсутствует"""
+        with self.connection.cursor() as cursor:
+            # Создание таблицы users, если она не существует
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS users (
+                    id SERIAL PRIMARY KEY,
+                    user_id BIGINT,
+                    lang VARCHAR(32),
+                    dec_static INT DEFAULT 0,
+                    enc_static INT DEFAULT 0
+                );
+            """)
+
     def get_version(self):
         """Получить версию СУБД PostgreSQL"""
         with self.connection.cursor() as cursor:
@@ -52,12 +66,27 @@ class Database:
             user_ids = cursor.fetchall()
         return user_ids, len(user_ids)
 
-    def get_statistics(self):
-        """Получить кол-во пользователей в боте"""
+    def post_enc_statics(self, user_id):
+        """Обновить кол-во зашифрованных файлов"""
         with self.connection.cursor() as cursor:
-            cursor.execute("SELECT COUNT(id) FROM users")
-            result = cursor.fetchone()[0]
-        return result
+            cursor.execute("UPDATE users SET enc_static = enc_static + 1 WHERE user_id = %s", [user_id])
+            print(1)
+
+    def post_dec_statics(self, user_id):
+        """Обновить кол-во расшифрованных файлов"""
+        with self.connection.cursor() as cursor:
+            cursor.execute("UPDATE users SET dec_static = dec_static + 1 WHERE user_id = %s", [user_id])
+            print(1)
+
+    def get_statistics(self):
+        """Получить кол-во пользователей в боте и суммы столбцов enc_static и dec_static"""
+        with self.connection.cursor() as cursor:
+            cursor.execute("SELECT COUNT(id), SUM(enc_static), SUM(dec_static) FROM users")
+            result = cursor.fetchone()
+            count_users = result[0]
+            sum_enc_static = result[1]
+            sum_dec_static = result[2]
+        return count_users, sum_enc_static, sum_dec_static
 
     def export_users(self, file_path):
         """Выгрузить данные таблицы users в Excel файл"""
@@ -69,3 +98,4 @@ class Database:
 
 
 db = Database(host, user, password, db_name, port)
+db.create_table()
