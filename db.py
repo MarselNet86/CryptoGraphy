@@ -92,7 +92,7 @@ class Database:
         """Выгрузить данные таблицы users в Excel файл"""
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")  # Отключение предупреждений
-            query = "SELECT id, user_id, lang FROM users"
+            query = "SELECT * FROM users"
             df = pd.read_sql_query(query, self.connection)
             df.to_excel(file_path, index=False)
 
